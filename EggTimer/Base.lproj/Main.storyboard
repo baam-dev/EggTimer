@@ -23,8 +23,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9S4-l0-41N" userLabel="Title View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="246.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-5r-pSP" userLabel="Title Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="246.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How do you like your eggs?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-5r-pSP" userLabel="Title Label">
+                                                <rect key="frame" x="0.0" y="99" width="374" height="147"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -123,17 +123,25 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="571.5" width="374" height="246.5"/>
                                         <subviews>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oBj-Tk-2ZM">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" trackImage="pencil.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oBj-Tk-2ZM">
                                                 <rect key="frame" x="0.0" y="110.5" width="374" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="E7B-yU-1Pv"/>
                                                 </constraints>
-                                                <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                                <color key="progressTintColor" systemColor="systemBlueColor"/>
                                                 <color key="trackTintColor" systemColor="systemGrayColor"/>
                                             </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="cec-N9-aLk">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="152"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="oBj-Tk-2ZM" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="2Ed-kn-obh"/>
+                                            <constraint firstAttribute="trailing" secondItem="cec-N9-aLk" secondAttribute="trailing" id="LVi-Lf-rbB"/>
+                                            <constraint firstItem="cec-N9-aLk" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="UDt-yR-xxq"/>
                                             <constraint firstAttribute="trailing" secondItem="oBj-Tk-2ZM" secondAttribute="trailing" id="dxA-m2-8NL"/>
                                             <constraint firstItem="oBj-Tk-2ZM" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="tMB-C0-K1w"/>
                                         </constraints>
@@ -152,6 +160,7 @@
                     </view>
                     <connections>
                         <outlet property="progresBar" destination="oBj-Tk-2ZM" id="HcV-ot-suh"/>
+                        <outlet property="statusText" destination="cec-N9-aLk" id="klZ-uA-Zkp"/>
                         <outlet property="titleLabel" destination="XLm-5r-pSP" id="0DS-qN-v9n"/>
                     </connections>
                 </viewController>
@@ -163,12 +172,13 @@
     <resources>
         <image name="hard_egg" width="287.5" height="366"/>
         <image name="medium_egg" width="288" height="363"/>
+        <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="soft_egg" width="287" height="365"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
